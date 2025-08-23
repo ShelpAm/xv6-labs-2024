@@ -1,12 +1,12 @@
-// TODO: this program can only run until 283 under xv6, but won't exit on Linux
-// (tested).
+// This program can only run until 283 under xv6 (due to restricted number
+// of processes), but won't exit on Linux (tested).
 
 #include "kernel/types.h"
 #include "user/user.h"
 
 void subprocess(int left[2]) __attribute__((noreturn));
 
-#define N 300
+#define N 280
 
 void wait_for_pipe(int *fd) {
   while (pipe(fd) == -1) {
